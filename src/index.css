@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer base {
+    /* Improved button cursor handling */
+    button:not([disabled]),
+    [role="button"]:not([disabled]) {
+        cursor: pointer;
+    }
+
+    button:disabled,
+    [role="button"]:disabled {
+        opacity: 50%;
+        cursor: not-allowed;
+    }
+
+    /* Better focus visibility */
+    *:focus-visible {
+        outline: 2px solid theme(colors.blue.500);
+        outline-offset: 2px;
+    }
+
+    /* Better number input styling */
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+}
+
+@layer components {
+    /* Consistent modal backdrop */
+    .modal-backdrop {
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+}
+
+@layer utilities {
+    /* Scrollbar styling */
+    .scrollbar-thin {
+        scrollbar-width: thin;
+        scrollbar-color: theme(colors.gray.300) theme(colors.gray.100);
+    }
+
+    .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-track {
+        background: theme(colors.gray.100);
+        border-radius: 3px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+        background: theme(colors.gray.300);
+        border-radius: 3px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+        background: theme(colors.gray.400);
+    }
+}

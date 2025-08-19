@@ -1,0 +1,7 @@
+@theme {
+    /* Custom blue palette matching your usage */
+    --color-blue-50: #eff6ff;
+    --color-blue-500: #3b82f6;
+    --color-blue-600: #2563eb;
+    --color-blue-700: #1d4ed8;
+}
