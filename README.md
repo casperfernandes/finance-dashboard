@@ -36,7 +36,7 @@ A modern, responsive personal finance dashboard built with React, TypeScript, an
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js (v18 or higher)
+- Node.js (v20.19 or higher)
 - npm or yarn package manager
 
 ### Installation
