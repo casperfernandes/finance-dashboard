@@ -2,6 +2,8 @@
 
 A modern, responsive personal finance dashboard built with React, TypeScript, and Tailwind CSS. Track your daily expenses, manage budgets, and gain insights into your spending patterns with beautiful visualizations.
 
+🚀 **[Live Demo](https://track-your-monies.netlify.app/)** 
+
 ![Finance Dashboard](https://img.shields.io/badge/React-18.3.1-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue) ![Tailwind](https://img.shields.io/badge/TailwindCSS-v4-38bdf8) ![Vite](https://img.shields.io/badge/Vite-7.1-646cff)
 
 ## 🌟 Features
@@ -226,8 +228,4 @@ yarn build
 
 ## 🚀 Deployment
 
-The application is optimized for static hosting platforms:
-
-- **Vercel**: Zero-config deployment
-- **Netlify**: Drag-and-drop deployment
-- **GitHub Pages**: Static site hosting
+The application is deployed and available at: **[https://track-your-monies.netlify.app/](https://track-your-monies.netlify.app/)**
