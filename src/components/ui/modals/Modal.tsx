@@ -26,8 +26,8 @@ export const ModalBody = ({ children }: { children: ReactNode }) => (
 
 export const ModalActions = ({ children }: { children: ReactNode }) => {
     return (
-        <div className="flex-shrink-0 bg-white p-4 border-t border-gray-200 md:p-6" 
-             style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}>
+        <div className="flex-shrink-0 bg-white p-4 border-t border-gray-200 md:p-6"
+            style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}>
             <div className="flex flex-col gap-3 md:flex-row">
                 {children}
             </div>
@@ -38,13 +38,13 @@ export const ModalActions = ({ children }: { children: ReactNode }) => {
 export const Modal = ({ children }: { children: ReactNode }) => {
     // Prevent body scroll when modal is open
     useBodyScrollLock(true);
-    
+
     return (
         <div
             className="fixed inset-0 bg-gray-400/60 modal-backdrop flex items-end md:items-center justify-center z-50 overflow-hidden md:p-4"
             role="dialog"
         >
-            <div className="bg-white w-full h-[100vh] md:h-auto md:max-h-[85vh] md:max-w-md 
+            <div className="bg-white w-full max-h-[80vh] md:h-auto md:max-h-[85vh] md:max-w-md 
                        rounded-t-3xl md:rounded-xl shadow-xl flex flex-col overflow-hidden"
             >
                 {children}
