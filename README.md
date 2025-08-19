@@ -41,7 +41,7 @@ A modern, responsive personal finance dashboard built with React, TypeScript, an
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/casperfernandes/finance-dashboard.git
    cd finance-dashboard
    ```
 
