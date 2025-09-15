@@ -27,8 +27,8 @@ interface IDashboardAnalytics {
     isLoading: boolean;
 }
 
-export const useDashboardAnalytics = (): IDashboardAnalytics => {
-    const { data: expensesData, isLoading: isExpensesLoading } = useExpenses();
+export const useDashboardAnalytics = ({ selectedDate }: { selectedDate: string }): IDashboardAnalytics => {
+    const { data: expensesData, isLoading: isExpensesLoading } = useExpenses({ filters: { date: new Date(selectedDate) } });
     const { data: currentMonthBudget = 0, isLoading: isMonthlyBudgetLoading } = useBudget();
     const { data: categories = [], isLoading: isCategoriesLoading } = useCategories();
 
@@ -67,7 +67,7 @@ export const useDashboardAnalytics = (): IDashboardAnalytics => {
             };
         }
 
-        const now = new Date();
+        const now = new Date(selectedDate);
         const currentMonth = now.getMonth();
         const currentYear = now.getFullYear();
         const currentDate = now.getDate();
@@ -137,5 +137,5 @@ export const useDashboardAnalytics = (): IDashboardAnalytics => {
             },
             isLoading: false,
         };
-    }, [isLoading, expensesData, currentMonthBudget, categories]);
+    }, [isLoading, expensesData, currentMonthBudget, categories, selectedDate]);
 };

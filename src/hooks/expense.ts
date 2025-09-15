@@ -4,7 +4,7 @@ import { expenseService } from "../services/expenseService";
 import type { ICreateUpdateExpense } from "../types";
 
 
-export function useExpenses({ filters }: { filters?: { month?: string } } = {}) {
+export function useExpenses({ filters }: { filters?: { date?: Date } } = {}) {
     return useQuery({
         queryKey: ['expenses', JSON.stringify(filters)],
         queryFn: () => expenseService.getAllExpenses({ filters }),

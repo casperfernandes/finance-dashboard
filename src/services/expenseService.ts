@@ -29,12 +29,21 @@ class ExpenseService {
         localStorage.setItem('expenses', JSON.stringify(testExpenses));
     };
 
-    async getAllExpenses({ filters }: { filters?: { month?: string } } = {}) {
+    async getAllExpenses({ filters }: { filters?: { date?: Date } } = {}) {
         const expenses = this.fetchExpensesFromStorage();
 
-        if (filters?.month) {
-            return expenses.filter(exp => new Date(exp.date).toISOString().slice(0, 7) === filters.month);
+        let selectedDate = new Date();
+
+        if (filters?.date) {
+            selectedDate = filters.date;
         }
+
+        return expenses.filter(exp => {
+            const expenseMonth = new Date(exp.date).getMonth();
+            const expenseYear = new Date(exp.date).getFullYear();
+
+            return expenseYear === selectedDate.getFullYear() && expenseMonth === selectedDate.getMonth();
+        });
 
         await simulateNetworkDelay();
 

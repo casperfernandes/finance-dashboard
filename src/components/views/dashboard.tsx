@@ -1,4 +1,5 @@
 import { BanknoteArrowDown, PlusCircle } from "lucide-react";
+import { useState } from "react";
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 
 import { useDashboardAnalytics } from "../../hooks/analytics";
@@ -7,6 +8,8 @@ import { ViewPage } from "../../types";
 import Loader from "../layout/loader";
 
 const Dashboard = () => {
+    const [selectedDate, setSelectedDate] = useState<string>(new Date().toISOString().split('T')[0]);
+
     const { setCurrentPage, setSetBudgetModal, setAddEditExpenseModal } = useUiStore();
 
     const {
@@ -20,7 +23,7 @@ const Dashboard = () => {
             categoryExpenseData,
         },
         isLoading,
-    } = useDashboardAnalytics();
+    } = useDashboardAnalytics({ selectedDate });
 
     return (
         <div className="p-4 lg:p-8">
@@ -45,6 +48,17 @@ const Dashboard = () => {
                     <h2 className="text-3xl font-bold text-gray-900">Dashboard</h2>
                     <p className="text-gray-600">Track your expenses and manage your budget</p>
                 </div>
+
+                {/* Date Picker */}
+                <input
+                    id="expense-date"
+                    type="month"
+                    value={selectedDate}
+                    onChange={event => setSelectedDate(event.target.value)}
+                    max={new Date().toISOString().split('T')[0]}
+                    className="w-full px-4 py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                />
 
                 <button
                     onClick={() => setAddEditExpenseModal(true)}
