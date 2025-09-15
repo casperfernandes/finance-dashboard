@@ -99,7 +99,6 @@ const AddExpenseModal = (props: IAddExpenseModalProps) => {
                                             type="date"
                                             value={expenseDate}
                                             onChange={event => setExpenseDate(event.target.value)}
-                                            min="2025-01-01"
                                             max={new Date().toISOString().split('T')[0]}
                                             className="w-full px-4 py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                             required
